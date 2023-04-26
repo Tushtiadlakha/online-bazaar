@@ -1,0 +1,47 @@
+<section class="hero py-16">
+  <div class="container mx-auto flex items-center justify-between">
+    <div class="w-1/2">
+      <h6 class="text-lg"><em>Hey craving for shopping?</em></h6>
+      <h1 class="text-3xl md:text-6xl font-bold">Don't wait ❗</h1>
+      <a href="/cart"
+        ><button
+          class="book px-4 py-2 items-center font-bold rounded-full mt-3"
+        >
+          Order Now
+        </button></a
+      >
+    </div>
+    <div class="w-1/2">
+      <img src="img/hero-bazaar.png" />
+    </div>
+  </div>
+</section>
+<section class="menu container mx-auto py-8">
+  <h1 class="text-xl mb-8 font-bold">All Catogeries</h1>
+  <div
+    class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-12 gap-y-16"
+  >
+    <%bazaars.forEach(function(bazaar) { %>
+    <div class="w-full md:w-64">
+      <img class="h-40 mx-auto mb-4" src="<%=bazaar.thumbnail%>" />
+      <div class="text-center">
+        <h2 class="mb-4 text-lg"><%=bazaar.title%></h2>
+        <span class="size py-1 px-4 rounded-full uppercase text-xs"
+          ><%=bazaar.category%></span
+        >
+        <div class="flex items-center justify-around mt-6">
+          <span class="font-bold text-lg">💰<%=bazaar.price%></span>
+          <button
+            class="add-to-cart py-1 px-6 flex rounded-full items-center font-bold"
+            value="<%=JSON.stringify(bazaar)%>"
+          >
+            <span>+</span>
+            <span class="ml-4">Add</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <% }) %>
+  </div>
+</section>
